@@ -10,15 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78e414a4-147f-468b-ba90-e9f4c233b3ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/tomcat_p_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jeffrey/servlet/CalServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jeffrey/tomcat/TomcatV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jeffrey/util/WebUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/web/cal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jeffrey/tomcat/TomcatV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jeffrey/tomcat/handler/HttpRequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,9 +82,22 @@
       <recent name="D:\桌面\文档\tomcat-p\src\web" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TomcatV1">
+  <component name="RunManager" selected="Application.TomcatV2">
     <configuration name="TomcatV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jeffrey.tomcat.TomcatV1" />
+      <module name="tomcat-p" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jeffrey.tomcat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TomcatV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jeffrey.tomcat.TomcatV2" />
       <module name="tomcat-p" />
       <extension name="coverage">
         <pattern>
@@ -192,10 +199,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.TomcatV1" />
+      <item itemvalue="Application.TomcatV2" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.20" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TomcatV2" />
         <item itemvalue="Application.TomcatV1" />
       </list>
     </recent_temporary>
@@ -208,7 +217,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712387279674</updated>
-      <workItem from="1712387281147" duration="5708000" />
+      <workItem from="1712387281147" duration="8398000" />
     </task>
     <task id="LOCAL-00001" summary="1.创建项目">
       <created>1712387789062</created>
@@ -217,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712387789062</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2.tomcat-p：v1.0&#10;实现http+socket+IO">
+      <created>1712397957871</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712397957871</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +241,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.创建项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.创建项目" />
+    <MESSAGE value="2.tomcat-p：v1.0&#10;实现http+socket+IO" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.tomcat-p：v1.0&#10;实现http+socket+IO" />
   </component>
 </project>
