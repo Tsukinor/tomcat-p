@@ -1,5 +1,10 @@
 package com.jeffrey.tomcat.handler;
 
+import com.jeffrey.tomcat.http.HttpServletRequestP;
+import com.jeffrey.tomcat.http.HttpServletResponseP;
+import com.jeffrey.tomcat.servlet.CalServletP;
+import com.jeffrey.tomcat.TomcatV3;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -24,31 +29,43 @@ public class HttpRequestHandler implements Runnable{
         InputStream inputStream ;
         try {
              inputStream = socket.getInputStream();
+//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"));
+//        String res = "";
+//            System.out.println("当前线程的名称--》" + Thread.currentThread().getName());
+//            System.out.println("------ tomcat-v2 接收数据--------");
+//        while ((res = bufferedReader.readLine()) != null){
+//            //如果长度为0
+//            if (res.length() == 0){
+//                break;
+//            }
+//            System.out.println(res);
+//        }
+            HttpServletRequestP httpServletRequestP = new HttpServletRequestP(inputStream);
+//            String num1 = httpServletRequestP.getParameter("num1");
+//            String num2 = httpServletRequestP.getParameter("num2");
+//            String method = httpServletRequestP.getMethod();
+//            String uri = httpServletRequestP.getUri();
+//            System.out.println(num1);
+//            System.out.println(num2);
+//            System.out.println(method);
+//            System.out.println(uri);
 
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"utf-8"));
-        String res = "";
-            System.out.println("当前线程的名称--》" + Thread.currentThread().getName());
-            System.out.println("------ tomcat-v2 接收数据--------");
-        while ((res = bufferedReader.readLine()) != null){
-            //如果长度为0
-            if (res.length() == 0){
-                break;
-            }
-            System.out.println(res);
-        }
+            //输出显示
+            HttpServletResponseP httpServletResponseP = new HttpServletResponseP(socket.getOutputStream());
+//            String s = HttpServletResponseP.respHeader + "<h1>hi......fff</h1>";
+//            OutputStream outputStream = httpServletResponseP.getOutputStream();
+//            outputStream.write(s.getBytes());
+//            outputStream.flush();
 
-        //输出
-        String respHeader = "HTTP/1.1 200\r\n" +
-                    "Content-Type: text/html;charset=utf-8\r\n\r\n";//响应头和响应体之间有两个换行！！！！
-        String s = respHeader + "<h1>hi,jeffrey</h1>";
-            System.out.println("======返回的数据是=========");
-            System.out.println(s);
-            OutputStream outputStream = socket.getOutputStream();
-            outputStream.write(s.getBytes());
-            outputStream.flush();
-
-        //关闭通道
-            outputStream.close();
+            //创建一个servlet对象 --》一
+//            CalServletP calServletP = new CalServletP();
+//            calServletP.doGet(httpServletRequestP,httpServletResponseP);
+            String uri = httpServletRequestP.getUri();
+            String servletName = TomcatV3.servletUrlMapping.get(uri);
+            CalServletP calServletP = TomcatV3.servletMapping.get(servletName);
+            calServletP.service(httpServletRequestP,httpServletResponseP);
+            //关闭通道
+//            outputStream.close();
             inputStream.close();
             socket.close();
         } catch (IOException e) {

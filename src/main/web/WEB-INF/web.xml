@@ -11,4 +11,23 @@
         <servlet-name>CalServlet</servlet-name>
         <url-pattern>/calservlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CalServletP</servlet-name>
+        <servlet-class>com.jeffrey.tomcat.servlet.CalServletP</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CalServletP</servlet-name>
+        <url-pattern>/calp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OKServlet</servlet-name>
+        <servlet-class>com.jeffrey.servlet.OKServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OKServlet</servlet-name>
+        <url-pattern>/ok</url-pattern>
+    </servlet-mapping>
 </web-app>
